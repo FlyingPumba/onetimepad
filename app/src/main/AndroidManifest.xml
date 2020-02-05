@@ -40,5 +40,28 @@
             android:theme="@style/zxing_CaptureTheme"
             android:windowSoftInputMode="stateAlwaysHidden" />
 
-    </application>
-</manifest>
+
+    
+                     <!-- emma updated -->
+                    <activity 
+                        android:label="EmmaInstrumentationActivity" 
+                        android:name="com.onest8.onetimepad.EmmaInstrument.InstrumentedActivity"/>
+                    <receiver android:name="com.onest8.onetimepad.EmmaInstrument.CollectCoverageReceiver">
+                    <intent-filter>
+                        <action android:name="evolutiz.emma.COLLECT_COVERAGE" />
+                    </intent-filter>
+                </receiver>
+                 <!-- emma updated -->
+                    </application>
+
+                
+                 <!-- emma updated -->
+                 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>  
+                 <instrumentation 
+                    android:handleProfiling="true" 
+                    android:label="EmmaInstrumentation" 
+                    android:name="com.onest8.onetimepad.EmmaInstrument.EmmaInstrumentation" 
+                    android:targetPackage="com.onest8.onetimepad"/>
+                 <!-- emma updated -->
+    
+                </manifest>
